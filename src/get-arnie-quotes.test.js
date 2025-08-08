@@ -7,9 +7,9 @@ const urls = [
   'http://www.smokeballdev.com/arnie3',
 ];
 
-test('expect no throws', () => {
+test('expect no throws', async () => {
   expect.assertions(1);
-  expect(async () => await getArnieQuotes(urls)).not.toThrow(); 
+  await expect(getArnieQuotes(urls)).resolves.not.toThrow(); 
 });
 
 test('responses to be correct', async () => {
